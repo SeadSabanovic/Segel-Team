@@ -8,6 +8,14 @@
   z-index: 100;
   transition: all 0.3s cubic-bezier(0, 0, 0.2, 1);
 
+  &__logo {
+    #logo-text {
+      @include breakpoint-down(medium) {
+        display: none;
+      }
+    }
+  }
+
   &.fill {
     background-color: $dark;
   }
@@ -17,6 +25,7 @@
     transform: translate3d(0, -110%, 0);
   }
 
+  // White line below the nav
   &::after {
     content: "";
     position: absolute;
@@ -34,6 +43,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @include breakpoint-down(nav) {
+      padding-right: 24px;
+    }
   }
 
   &__links {
@@ -42,6 +55,14 @@
     display: flex;
     align-items: center;
     gap: 32px;
+
+    @include breakpoint-down(xlarge) {
+      gap: 8px;
+    }
+
+    @include breakpoint-down(nav) {
+      display: none;
+    }
   }
 
   &__link {
@@ -55,7 +76,7 @@
       opacity: 1;
     }
 
-    &:not(.active):hover {
+    &:not(.active):not(.cta):hover {
       opacity: 0.75;
     }
 
@@ -68,6 +89,114 @@
       opacity: 1;
       padding: 10px calc(10px + 66px);
       background-color: $accent;
+    }
+  }
+
+  &__menu-toggle {
+    z-index: 100000;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+
+    @include breakpoint-up(nav) {
+      display: none;
+    }
+
+    &.active {
+      margin-right: 17px;
+
+      span {
+        background: $dark;
+        transform: rotate(45deg) translate(-2px, -5px);
+      }
+
+      span:nth-last-child(2) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+      }
+
+      span:nth-last-child(1) {
+        transform: rotate(-45deg) translate(0, -1px);
+      }
+    }
+
+    span {
+      display: block;
+      background: $white;
+      position: relative;
+      width: 33px;
+      height: 4px;
+      border-radius: 3px;
+      z-index: 1;
+      transform-origin: 4px 0px;
+      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+        background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+
+      &:first-child {
+        transform-origin: 0% 0%;
+      }
+
+      &:last-child {
+        transform-origin: 0% 0%;
+      }
+
+      &:nth-last-child(2) {
+        transform-origin: 0% 100%;
+      }
+    }
+  }
+
+  &__backdrop {
+    z-index: 99;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($dark, 0.6);
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  &__mobile {
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    min-height: 120vh;
+    width: 100%;
+    max-width: 400px;
+    z-index: 100;
+    background-color: $white;
+    padding: calc(95px + 24px) 24px calc(20vh + 24px);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+    @include breakpoint-up(nav) {
+      display: none;
+    }
+
+    h3 {
+      margin-bottom: 16px;
+    }
+
+    h4 {
+      margin-bottom: 24px;
+    }
+  }
+
+  &.mobile-active {
+    .nav__backdrop {
+      opacity: 1;
+      pointer-events: all;
+      cursor: pointer;
+    }
+    .nav__mobile {
+      transform: translateX(0);
     }
   }
 }

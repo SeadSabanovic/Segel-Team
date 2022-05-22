@@ -7,11 +7,20 @@
   display: flex;
   flex-direction: column;
 
+  @include breakpoint-down(large) {
+    padding: 180px 0 180px;
+  }
+
   .top {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     margin-bottom: 130px;
+
+    @include breakpoint-down(large) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 
   &__wrap {
@@ -27,7 +36,7 @@
       width: 100%;
       height: fit-content;
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 
     &__card {
@@ -41,9 +50,6 @@
 
       &.loaded {
         opacity: 1;
-        /* .team__wrap__card__details {
-          transition-delay: opacity 0;
-        } */
       }
 
       &.open-right {
@@ -103,9 +109,14 @@
   }
 
   &__filters {
-    margin: 0;
+    margin-top: 24px;
+    padding: 0;
     display: flex;
     gap: 16px;
+
+    @include breakpoint-down(medium) {
+      flex-direction: column;
+    }
 
     &__filter {
       padding: 10px;

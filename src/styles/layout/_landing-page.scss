@@ -1,3 +1,5 @@
+@use "../abstracts/" as *;
+
 .landing-page {
   z-index: 1;
   position: relative;
@@ -6,6 +8,9 @@
   clip-path: polygon(100% 0, 100% 90%, 50% 100%, 0 90%, 0 0);
   display: flex;
   align-items: center;
+  @include breakpoint-down(large) {
+    clip-path: polygon(100% 0, 100% 100%, 100% 100%, 0 80%, 0 0);
+  }
 
   // Overlay
   &::after {
