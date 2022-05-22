@@ -1,0 +1,58 @@
+@use "../abstracts/" as *;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&display=swap");
+
+@function calculateRem($size) {
+  $remSize: calc($size / 16px);
+  @return calc($remSize * 1rem);
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+h1 {
+  font-size: calculateRem($size-headline-lg);
+  font-weight: 800;
+}
+
+h2 {
+  font-size: calculateRem(60px);
+  font-weight: 800;
+}
+
+h3 {
+  font-size: calculateRem(24px);
+  font-weight: 700;
+}
+
+h4 {
+  font-size: calculateRem(16px);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+p {
+  font-size: calculateRem(16px);
+  font-weight: 500;
+  line-height: 1.8;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.light {
+  color: $white;
+}
+
+.dark {
+  color: $dark;
+}
+
+.accent {
+  color: $accent;
+}

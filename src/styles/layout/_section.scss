@@ -1,0 +1,32 @@
+@use "../abstracts/" as *;
+
+.grid-section {
+  background-color: $white;
+  padding: 180px 0;
+  width: 100%;
+  margin: 0 auto;
+  max-width: $wrap-max-width-wide;
+
+  .wrap {
+    width: 100%;
+    max-width: $wrap-max-width;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 64px;
+    padding-bottom: 200px;
+  }
+
+  &__container {
+    z-index: 1;
+  }
+
+  &__custom-asset {
+    height: 400px;
+    z-index: 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translateY(calc(50% + 200px));
+  }
+}

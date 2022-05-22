@@ -1,0 +1,29 @@
+@use "../abstracts/" as *;
+
+* {
+  &::selection {
+    background-color: $accent;
+    color: $white;
+  }
+}
+
+body {
+  background-color: $light-grey;
+  overflow: hidden;
+
+  &.no-scroll {
+    overflow: hidden !important;
+  }
+
+  &.loaded {
+    display: block;
+    overflow: auto;
+  }
+}
+
+.wrap {
+  width: 100%;
+  max-width: $wrap-max-width;
+  margin: 0 auto;
+  padding: 0 24px;
+}

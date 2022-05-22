@@ -1,0 +1,15 @@
+.loader {
+  z-index: 1000;
+  position: fixed;
+  display: block;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: #e5eaee;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.6, 1);
+  pointer-events: none;
+
+  &.leaving {
+    opacity: 0;
+  }
+}
