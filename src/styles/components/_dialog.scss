@@ -1,4 +1,6 @@
 .backdrop {
+  pointer-events: none;
+  opacity: 0;
   z-index: 10000;
   position: fixed;
   inset: 0;
@@ -8,24 +10,41 @@
   padding: 95px 0;
   cursor: pointer;
   overflow-y: scroll;
-}
-.news-dialog {
-  overflow: hidden;
-  cursor: default;
-  position: relative;
-  width: 100%;
-  max-width: 1400px;
-  border: none;
-  padding: 80px 100px;
+  transition: opacity 0s;
 
-  &__top {
-    max-width: 600px;
-    margin-bottom: 80px;
+  &.active {
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 1;
+    pointer-events: all;
   }
 
-  &__content {
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: 200px;
+  .news-dialog {
+    overflow: hidden;
+    cursor: default;
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    border: none;
+    padding: 80px 100px;
+
+    &__close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      font-size: 35px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    &__top {
+      max-width: 600px;
+      margin-bottom: 80px;
+    }
+
+    &__content {
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: 200px;
+    }
   }
 }

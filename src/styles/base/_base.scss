@@ -12,6 +12,7 @@ body {
   overflow: hidden;
 
   &.no-scroll {
+    padding-right: 17px;
     overflow: hidden !important;
   }
 
