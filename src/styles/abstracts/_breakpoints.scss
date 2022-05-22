@@ -7,7 +7,9 @@ $breakpoints: (
   // 1440/16
   "xlarge": 90em,
   // 980/16
-  "nav": 61.25em
+  "nav": 61.25em,
+  // 520/16
+  "team": 32.5em
 );
 
 @mixin breakpoint-down($size) {

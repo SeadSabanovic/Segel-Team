@@ -53,18 +53,33 @@
       }
 
       &.open-right {
-        .team__wrap__card__details {
-          opacity: 1;
-          transition: transform 0.3s ease;
-          transform: translateX(100%);
+        @include breakpoint-up(team) {
+          .team__wrap__card__details {
+            opacity: 1;
+            transition: transform 0.3s ease;
+            transform: translateX(100%);
+          }
         }
       }
 
       &.open-left {
-        .team__wrap__card__details {
-          opacity: 1;
-          transition: transform 0.3s ease;
-          transform: translateX(-100%);
+        @include breakpoint-up(team) {
+          .team__wrap__card__details {
+            opacity: 1;
+            transition: transform 0.3s ease;
+            transform: translateX(-100%);
+          }
+        }
+
+        @include breakpoint-down(team) {
+          img {
+            opacity: 0;
+            transition: opacity 0.4s ease;
+          }
+
+          .team__wrap__card__details {
+            opacity: 1;
+          }
         }
       }
 
@@ -83,7 +98,7 @@
         height: 100%;
         z-index: 2;
         filter: grayscale(100%);
-        transition: all 0.2s ease;
+        transition: all 0.4s ease;
       }
 
       &__details {

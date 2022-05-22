@@ -1,3 +1,5 @@
+@use "../abstracts/" as *;
+
 .backdrop {
   pointer-events: none;
   opacity: 0;
@@ -27,6 +29,10 @@
     border: none;
     padding: 80px 100px;
 
+    @include breakpoint-down(medium) {
+      padding: 80px 24px;
+    }
+
     &__close {
       position: absolute;
       top: 24px;
@@ -42,9 +48,37 @@
     }
 
     &__content {
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: 200px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 300px 1fr;
+
+      @include breakpoint-down(large) {
+        grid-template-columns: 100px 1fr;
+      }
+
+      @include breakpoint-down(medium) {
+        grid-template-columns: 1fr;
+      }
+
+      .social {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 42px;
+        width: 100px;
+        z-index: 2;
+
+        @include breakpoint-down(medium) {
+          padding: 80px 0;
+          flex-direction: row;
+        }
+      }
+
+      .text {
+        display: flex;
+        flex-direction: column;
+        max-width: 630px;
+      }
     }
   }
 }

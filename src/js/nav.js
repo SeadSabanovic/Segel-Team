@@ -1,7 +1,6 @@
 const nav = document.getElementsByClassName("nav")[0];
 const hamburger = document.getElementsByClassName("nav__menu-toggle")[0];
 const backdrop = document.getElementsByClassName("nav__backdrop")[0];
-console.log(backdrop);
 let navActive = false;
 
 //Toggle Mobile Nav
@@ -15,7 +14,6 @@ hamburger.addEventListener("click", () => {
 });
 
 const closeMobile = () => {
-  console.log("ran");
   nav.classList.remove("mobile-active");
   document.body.classList.remove("no-scroll");
   hamburger.classList.remove("active");
