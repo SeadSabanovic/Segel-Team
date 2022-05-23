@@ -11,28 +11,29 @@ body {
 }
 
 h1 {
-  font-size: calculateRem($size-headline-lg);
+  font-size: calc(50px + (80 - 50) * ((100vw - 300px) / (1600 - 300)));
   font-weight: 800;
 }
 
 h2 {
-  font-size: calculateRem(60px);
+  font-size: calc(40px + (60 - 40) * ((100vw - 300px) / (1600 - 300)));
   font-weight: 800;
 }
 
 h3 {
-  font-size: calculateRem(24px);
+  font-size: calc(18px + (24 - 18) * ((100vw - 300px) / (1600 - 300)));
   font-weight: 700;
 }
 
 h4 {
   font-size: calculateRem(16px);
+  font-size: calc(15px + (16 - 15) * ((100vw - 300px) / (1600 - 300)));
   font-weight: 700;
   letter-spacing: 0.08em;
 }
 
 p {
-  font-size: calculateRem(16px);
+  font-size: calc(15px + (16 - 15) * ((100vw - 300px) / (1600 - 300)));
   font-weight: 500;
   line-height: 1.8;
 }

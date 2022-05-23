@@ -37,6 +37,9 @@
     @include breakpoint-down(large) {
       position: relative;
       transform: none;
+      max-width: unset;
+      width: calc(100% + 48px);
+      margin-left: -24px;
     }
   }
 }

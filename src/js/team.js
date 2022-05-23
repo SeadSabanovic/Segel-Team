@@ -180,4 +180,14 @@ loadMoreBtn.addEventListener("click", () => {
   xhr.send();
 });
 
+const debounceResize = (func) => {
+  let timer;
+  return function (event) {
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(updateTeamWrapHeight(), 100);
+  };
+};
+
+window.addEventListener("resize", debounceResize());
+
 loadInitialTeam();
