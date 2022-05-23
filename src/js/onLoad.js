@@ -1,14 +1,4 @@
-// For testing
 document.addEventListener("DOMContentLoaded", () => {
-  document.getElementsByTagName("body")[0].classList.add("loaded");
-  setTimeout(() => {
-    const loader = document.getElementsByClassName("loader")[0];
-    loader.remove();
-  });
-});
-
-// Return this
-/* document.addEventListener("DOMContentLoaded", () => {
   document.getElementsByTagName("body")[0].classList.add("loaded");
   setTimeout(() => {
     const loader = document.getElementsByClassName("loader")[0];
@@ -19,4 +9,3 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => loader.remove(), 300);
   }, 300);
 });
- */

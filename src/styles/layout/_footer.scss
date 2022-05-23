@@ -28,6 +28,12 @@
         @include breakpoint-down(large) {
           padding: 80px 24px;
         }
+
+        @include breakpoint-down(medium) {
+          .footer__split__wrap__social {
+            align-self: center;
+          }
+        }
       }
     }
 

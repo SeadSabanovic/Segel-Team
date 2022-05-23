@@ -139,6 +139,11 @@
       cursor: pointer;
       transition: color 0.2s ease;
 
+      &:not(.active):hover {
+        color: $white;
+        opacity: 0.5;
+      }
+
       &.active {
         color: $accent;
       }
